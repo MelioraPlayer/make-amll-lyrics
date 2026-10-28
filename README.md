@@ -123,7 +123,7 @@ uv run --python 3.12 python scripts/build_release.py --out dist
 
 提交贡献时附带复现步骤与合成样例；修复应有针对性的回归测试。不要在测试夹具中提交真实完整歌曲、私人 API、令牌、个人文件路径或用户投稿数据。不要为了测试修改真实 AMLL Issue 或 PR。
 
-0.1.0 的本地验证环境为 Windows、Python 3.12：21 项测试通过，包含 FFmpeg 合成音频重采样；合成示例通过 `ttml_processor 0.3.3` 与当时仓库 validator；英文 CTC 用已有 emission 缓存完成一行真实强制对齐复核。macOS／Linux CI 已配置但尚未远程执行，本次未重新实测 CUDA、FunASR 和 Demucs 的完整流程。
+0.1.0 的本地验证环境为 Windows、Python 3.12：21 项测试通过，包含 FFmpeg 合成音频重采样；合成示例通过 `ttml_processor 0.3.3` 与当时仓库 validator；英文 CTC 用已有 emission 缓存完成一行真实强制对齐复核。首轮 Windows／macOS／Linux × Python 3.11／3.12 共 6 组 CI 均通过，后续状态见 [GitHub Actions](https://github.com/MelioraPlayer/make-amll-lyrics/actions/workflows/check.yml)。CI 未安装 FFmpeg 的环境会跳过音频集成测试；本次未重新实测 CUDA、FunASR 和 Demucs 的完整流程。
 
 ## 许可证与来源
 
