@@ -1,0 +1,26 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B -m unittest discover -s tests -v
+      - run: python scripts/ttml_tools.py export examples/reviewed.json work/example.ttml
+      - run: python scripts/ttml_tools.py check work/example.ttml --duration 12
+      - run: python scripts/build_release.py --out dist

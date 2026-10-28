@@ -1,0 +1,4 @@
+interface:
+  display_name: "AMLL 歌词制作与投稿"
+  short_description: "查询歌曲、查重、人声对齐、音节拆分、TTML 校验与 AMLL 投稿"
+  default_prompt: "使用 $amll-lyrics 帮我查询并查重这首歌，取得音频和歌词，按实际唱法完成逐音节打轴、译文及 TTML 校验。"

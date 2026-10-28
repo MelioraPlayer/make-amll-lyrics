@@ -1,0 +1,2 @@
+-r alignment.txt
+funasr==1.4.16

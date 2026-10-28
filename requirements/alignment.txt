@@ -1,0 +1,5 @@
+# Install a matching torch/torchaudio pair. See README for explicit CPU wheels.
+torch==2.8.0
+torchaudio==2.8.0
+numpy>=1.26,<3
+soundfile>=0.12.1,<1
